@@ -24,16 +24,9 @@ def normalize(X_train, X_test):
     return X_train, X_test
 
 def prepare_cifar(x, y):
-
     x = tf.cast(x, tf.float32)
     y = tf.cast(y, tf.int32)
     return x, y
-
-
-def compute_loss(logits, labels):
-  return tf.reduce_mean(
-      tf.nn.sparse_softmax_cross_entropy_with_logits(
-          logits=logits, labels=labels))
 
 def main():
 
@@ -54,7 +47,7 @@ def main():
 
     model.summary()
 
-    loss_fn = keras.losses.CategoricalCrossentropy(from_logits=True)
+    loss_fn = keras.losses.CategoricalCrossentropy()
     metric = keras.metrics.CategoricalAccuracy()
 
     optimizer = optimizers.Adam(learning_rate=0.0001)
