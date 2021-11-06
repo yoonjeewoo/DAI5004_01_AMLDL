@@ -28,9 +28,6 @@ def main():
     test_loader = tf.data.Dataset.from_tensor_slices((x_val, y_val))
     test_loader = test_loader.shuffle(25000).batch(32)
     print('done.')
-    
-
-    print(x_train.shape)
 
     model = LSTM_FC(num_classes=2, max_features=max_features)
     model.build(input_shape=(None, 200))

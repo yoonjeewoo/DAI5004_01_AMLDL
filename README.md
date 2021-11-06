@@ -2,3 +2,4 @@
 성균관대학교 인공지능융합학과 고급머신러닝딥러닝 과제
 - Assignment 2: VGG16
 - Assignment 3: RNN and LSTM
+- Assignment 4: UNet
